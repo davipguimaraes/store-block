@@ -1,4 +1,6 @@
 import { ClientsConfig, LRUCache, Service, ServiceContext } from '@vtex/api'
+import {helloWorld} from "./resolvers/helloWorld";
+import {gif} from "./resolvers/gif";
 
 import { Clients } from './clients'
 
@@ -30,7 +32,8 @@ export default new Service<Clients, {}>({
   graphql: {
     resolvers: {
       Query: {
-
+        helloWorld,
+        gif
       },
     },
   },
